@@ -24,20 +24,40 @@
             border-radius: 5px;
             padding: 7px;
         }
+        .pie{
+            background-color: black;
+            color: white;
+            width: 100%;
+            text-align: center;
+            height: 60px;
+            padding-top: 30px;
+            position: absolute;
+            bottom: 5px;
+        }
+        body{
+            background-image: url('img/Ferretería/tuerca.png');
+        }
     </style>
     <script>
         function sumar(){
             var v1 = document.getElementById('txtV1').value;   
             var v2 = document.getElementById('txtV2').value;  
+            var v3 = document.getElementById('txtV3').value;   
+            var v4 = document.getElementById('txtV4').value;  
             //parseInt es una función de js que convierte un texto a número 
-            var sm = parseInt(v1) + parseInt(v2);  
+            var sm = parseInt(v1) + parseInt(v2)+parseInt(v3) + parseInt(v4);  
             document.getElementById('txtRes').value = sm;
+            //Aplicando un color
+            document.getElementById('txtRes').style.backgroundColor="#A3CFF5";
         }
         function limpiar(){
             document.getElementById('txtV1').value="";
             document.getElementById('txtV2').value="";
+            document.getElementById('txtV3').value="";
+            document.getElementById('txtV4').value="";
             document.getElementById('txtRes').value="";
             document.getElementById('txtV1').focus(); //ubica el cursor
+            document.getElementById('txtRes').style.backgroundColor="#F9F1DB";   
         }
     </script>
 </head>
@@ -66,6 +86,14 @@
                     <td> <input type="text" id="txtV2"></td>
                 </tr>
                 <tr>
+                    <td>Valor 3</td>
+                    <td> <input type="text" id="txtV3"></td>
+                </tr>
+                <tr>
+                    <td>Valor 4</td>
+                    <td> <input type="text" id="txtV4"></td>
+                </tr>
+                <tr>
                     <td>Resultado</td>
                     <td> <input type="text" id="txtRes" disabled  ></td>
                 </tr>
@@ -78,8 +106,8 @@
     </div>
 
     <!--pie de página-->
-    <div>
-
+    <div class="pie">
+        Elaborado por Remigio Huarcaya Almeyda - Noviembre 2023 - rshuarcaya@gmail.com
     </div>
 </body>
 </html>
