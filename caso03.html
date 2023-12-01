@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caso 03 | Javascript</title>
+    <script>
+        function calcular(){
+            var xres = "";
+            var xnota = document.getElementById('txtNota').value;
+            if ( parseFloat(xnota) >= 11){
+                xres = "Aprobado";
+                document.getElementById('txtRes').style.color= "blue";
+            }else{
+                xres = "Desaprobado";
+                document.getElementById('txtRes').style.color= "red";
+            }
+            document.getElementById('txtRes').value = xres;
+        }
+        function limpiar(){
+            document.getElementById('txtNota').value = "";
+            document.getElementById('txtRes').value = "";
+            document.getElementById('txtNota').focus(); //Focalizar
+        }
+    </script>
+</head>
+<body>
+    
+    <div>
+        <!--Banner-->
+    </div>
+    <div>
+        <!--Título-->
+    </div>
+    <div>
+        <form action="">
+            <table>
+                <tr>
+                    <td>Nota Final</td>
+                    <td><input type="text" name="" id="txtNota"></td>
+                </tr>
+                <tr>
+                    <td>Resultado</td>
+                    <td><input type="text" name="" id="txtRes"></td>
+                </tr>
+                <tr>
+                    <td><input type="button" onclick="calcular();" value="Procesar"></td>
+                    <td><input type="button" onclick="limpiar();" value="Limpiar"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</body>
+</html>
